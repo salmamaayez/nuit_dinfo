@@ -3,7 +3,7 @@ import { delay, motion } from "framer-motion";
 import styles from "./Sections.module.css";
 
 type Props = {
-	src: string;
+	src: string ;
 	alt: string;
 	animateImg: boolean;
 	children: any;

@@ -1,4 +1,4 @@
-.parent {
+/*.parent {
 	margin-right: "auto";
 	align-items: "center";
 	gap: "15px";
@@ -7,6 +7,34 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
+}
+
+.logo_p {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-weight: 800;
+}
+
+.span {
+	font-size: 20px;
+}
+*/
+.parent {
+	margin-right: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 15px; /* enlève les quotes autour des nombres */
+}
+
+.logo {
+	width: 50px;       /* taille plus petite */
+	height: 50px;      /* même taille pour garder un carré parfait */
+	border-radius: 50%; /* 🔥 rend le logo circulaire */
+	object-fit: cover;  /* l’image remplit le cercle sans déformation */
 }
 
 .logo_p {

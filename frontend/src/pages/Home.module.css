@@ -1,4 +1,4 @@
-.parent {
+/*.parent {
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
 	height: 100vh;
@@ -42,4 +42,125 @@
 
 .ui2 {
 	width: 80%;
+}
+*/
+.parent h1 {
+	font-weight: 1000;
+	font-size: 3rem;
+}
+
+.parent h2 {
+	color: #00ced1;
+}
+
+.parent p {
+	font-weight: 300;
+	font-size: 1.3rem;
+	word-spacing: 0.4rem;
+	line-height: 2;
+}
+
+.highlight {
+	color: #00ced1 !important;
+	margin: 0;
+}
+
+.btn {
+	background-color: #00ced1;
+	padding: 1rem 2rem;
+	color: black;
+	border-radius: 10px;
+	margin-top: 2rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+/* Images */
+.ui1 {
+	max-width: 100%;
+}
+
+.ui2 {
+	width: 80%;
+}
+
+
+
+/* =========================================
+   📱 RESPONSIVE DESIGN — HOME PAGE
+   ========================================= */
+
+/* -------- MOBILE -------- */
+@media (max-width: 768px) {
+
+	.parent,
+	.parent_reverse {
+		flex-direction: column;
+		height: auto;
+		padding: 3rem 1rem;
+	}
+
+	.div1,
+	.div2 {
+		width: 100%;
+		padding-left: 0 !important;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.div1 > h1,
+	.parent h1 {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.parent p,
+	.div2 > p {
+		font-size: 1rem;
+		text-align: center;
+		line-height: 1.6;
+	}
+
+	.btn {
+		padding: 0.8rem 1.4rem;
+		font-size: 1rem;
+	}
+
+	.img {
+		margin-top: 2rem;
+	}
+
+	.ui2 {
+		width: 95%;
+	}
+}
+
+
+/* -------- TABLETTE -------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+	.parent,
+	.parent_reverse {
+		flex-direction: column;
+		height: auto;
+		padding: 4rem 2rem;
+	}
+
+	.div1,
+	.div2 {
+		width: 90%;
+		text-align: center;
+	}
+
+	.div1 > h1 {
+		font-size: 2.5rem;
+	}
+
+	.parent p {
+		font-size: 1.1rem;
+	}
+
+	.ui2 {
+		width: 85%;
+	}
 }

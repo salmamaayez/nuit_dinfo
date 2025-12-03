@@ -9,32 +9,31 @@ import { useAuth } from "./context/context";
 import styles from "./App.module.css";
 
 function App() {
-	let routes;
-	if (useAuth()?.isLoggedIn) {
-		routes = (
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/chat' element={<Chat />} />
-			</Routes>
-		);
-	} else {
-		routes = (
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/signup' element={<Signup />} />
-			</Routes>
-		);
-	}
+  let routes;
+  /*if (useAuth()?.isLoggedIn) {
+    routes = (
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
+    );
+  } else {*/
+  routes = (
+    <Routes>
+      <Route path="/chat" element={<Chat />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
+  );
+  // }
 
-	return (
-		<div>
-			<Header />
-			<main className={styles.routes}>
-                {routes}
-            </main>
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+      <main className={styles.routes}>{routes}</main>
+    </div>
+  );
 }
 
 export default App;
