@@ -1,50 +1,84 @@
-/*.parent {
-	margin-right: "auto";
-	align-items: "center";
-	gap: "15px";
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-start;
-}
-
-.logo_p {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	font-weight: 800;
-}
-
-.span {
-	font-size: 20px;
-}
-*/
 .parent {
-	margin-right: auto;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start;
-	gap: 15px; /* enlève les quotes autour des nombres */
+	gap: var(--space-xs);
 }
 
-.logo {
-	width: 50px;       /* taille plus petite */
-	height: 50px;      /* même taille pour garder un carré parfait */
-	border-radius: 50%; /* 🔥 rend le logo circulaire */
-	object-fit: cover;  /* l’image remplit le cercle sans déformation */
-}
-
-.logo_p {
+.logoLink {
 	display: flex;
-	flex-direction: row;
+	align-items: center;
+	gap: var(--space-sm);
+	text-decoration: none;
+	transition: transform 0.3s ease;
+}
+
+.logoLink:hover {
+	transform: scale(1.05);
+}
+
+.logoIcon {
+	position: relative;
+	display: flex;
+	align-items: center;
 	justify-content: center;
-	align-items: center;
+	font-size: 2rem;
+}
+
+.village {
+	position: relative;
+	z-index: 1;
+}
+
+.brain {
+	position: absolute;
+	font-size: 1.2rem;
+	top: -5px;
+	right: -10px;
+	filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logoText {
+	display: flex;
+	align-items: baseline;
+	font-family: var(--font-serif);
 	font-weight: 800;
 }
 
-.span {
-	font-size: 20px;
+.miniText {
+	font-size: var(--text-2xl);
+	color: var(--color-forest-green);
+}
+
+.mindText {
+	font-size: var(--text-2xl);
+	color: var(--color-meadow-green);
+}
+
+.tagline {
+	font-family: var(--font-mono);
+	font-size: var(--text-xs);
+	color: var(--color-text-secondary);
+	margin: 0;
+	letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.logoIcon {
+		font-size: 1.5rem;
+	}
+	
+	.brain {
+		font-size: 1rem;
+	}
+	
+	.miniText,
+	.mindText {
+		font-size: var(--text-xl);
+	}
+	
+	.tagline {
+		font-size: 0.65rem;
+	}
 }

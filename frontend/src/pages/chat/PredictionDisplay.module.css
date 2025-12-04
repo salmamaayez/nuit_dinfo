@@ -1,0 +1,320 @@
+/*========================================
+   ✨ PREDICTION DISPLAY - Child-Friendly
+   ======================================== */
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 250, 240, 0.95));
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(123, 160, 91, 0.2);
+  border: 3px solid var(--color-meadow-green);
+}
+
+/* ========================================
+   📌 HEADER
+   ======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.headerIcon {
+  font-size: 1.5rem;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.headerTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-navy-blue);
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #2c3e50, #52a675);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   🎴 PREDICTIONS GRID
+   ======================================== */
+
+.predictionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* ========================================
+   🎨 PREDICTION CARDS
+   ======================================== */
+
+.predictionCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.predictionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.predictionCard:hover::before {
+  opacity: 0.2;
+}
+
+/* Confidence-based colors */
+.highConfidence {
+  background: linear-gradient(135deg, #a8e6cf 0%, #56cc9d 100%);
+  border: 3px solid #3da574;
+}
+
+.mediumConfidence {
+  background: linear-gradient(135deg, #ffd97d 0%, #ffb347 100%);
+  border: 3px solid #ff9800;
+}
+
+.lowConfidence {
+  background: linear-gradient(135deg, #ffaaa5 0%, #ff8b94 100%);
+  border: 3px solid #e74c3c;
+}
+
+/* Click animation */
+.predictionCard.clicked {
+  animation: clickPulse 0.6s ease-out;
+  box-shadow: 0 0 0 0 rgba(123, 160, 91, 0.7),
+              0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes clickPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(123, 160, 91, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(123, 160, 91, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(123, 160, 91, 0);
+  }
+}
+
+/* ========================================
+   ✨ SPARKLE EFFECTS
+   ======================================== */
+
+.sparkles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+}
+
+/* ========================================
+   📝 WORD DISPLAY
+   ======================================== */
+
+.wordContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.word {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+/* ========================================
+   📊 CONFIDENCE CIRCLE
+   ======================================== */
+
+.confidenceContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0.5rem 0;
+  z-index: 1;
+}
+
+.progressRing {
+  transform: rotate(-90deg);
+}
+
+.progressRingBg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 6;
+}
+
+.progressRingCircle {
+  fill: none;
+  stroke: #2c3e50;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 201.06; /* 2 * π * 32 */
+  stroke-dashoffset: 0;
+  filter: drop-shadow(0 0 4px rgba(44, 62, 80, 0.4));
+}
+
+.highConfidence .progressRingCircle {
+  stroke: #27ae60;
+}
+
+.mediumConfidence .progressRingCircle {
+  stroke: #f39c12;
+}
+
+.lowConfidence .progressRingCircle {
+  stroke: #e74c3c;
+}
+
+.confidenceText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.confidenceNumber {
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.confidencePercent {
+  font-size: 0.9rem;
+  color: #34495e;
+  margin-left: 2px;
+}
+
+/* ========================================
+   🏷️ CONFIDENCE LABEL
+   ======================================== */
+
+.confidenceLabel {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   🎬 ANIMATIONS
+   ======================================== */
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+/* ========================================
+   📱 RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .headerTitle {
+    font-size: 1.4rem;
+  }
+
+  .predictionsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .predictionCard {
+    padding: 1rem;
+    min-height: 200px;
+  }
+
+  .word {
+    font-size: 1.2rem;
+  }
+
+  .confidenceContainer {
+    width: 70px;
+    height: 70px;
+  }
+
+  .confidenceNumber {
+    font-size: 1.3rem;
+  }
+
+  .confidenceLabel {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .predictionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .predictionCard {
+    min-height: 180px;
+  }
+}

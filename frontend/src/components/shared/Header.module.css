@@ -1,31 +1,45 @@
+/*.parent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-md) var(--space-xl);
+	background: linear-gradient(180deg, var(--color-warm-beige), var(--color-background));
+	box-shadow: var(--shadow-sm);
+	border-bottom: 3px solid var(--color-meadow-green);
+}*/
 .parent {
-	position: fixed;
-	top: 0;
-	left: 0;
-    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-xl);
+    background: linear-gradient(180deg, var(--color-warm-beige), var(--color-background));
+    box-shadow: var(--shadow-sm);
+    border-bottom: 3px solid var(--color-meadow-green);
+
+    /* Ajout pour rendre le header fixe */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    box-sizing: border-box;
-    padding: 0.5rem 1.2rem 0.5rem 1rem;
-    margin-top: 10px;
-    z-index: 2;
+    z-index: 999;
 }
 
-.parent > div:nth-child(1){
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+
+.parent > div:last-child {
+	display: flex;
+	gap: var(--space-lg);
+	align-items: center;
 }
 
-.parent > div:nth-child(2){
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+/* Responsive */
+@media (max-width: 768px) {
+	.parent {
+		padding: var(--space-sm) var(--space-md);
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+	
+	.parent > div:last-child {
+		gap: var(--space-md);
+	}
 }

@@ -1,0 +1,75 @@
+.container {
+	width: 100%;
+	margin: var(--space-xl) 0;
+}
+
+.title {
+	font-family: var(--font-sans);
+	font-size: var(--text-lg);
+	color: var(--color-forest-green);
+	text-align: center;
+	margin-bottom: var(--space-lg);
+	font-weight: 700;
+}
+
+.suggestionsGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: var(--space-sm);
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.suggestionBtn {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+	padding: var(--space-sm) var(--space-md);
+	background: linear-gradient(135deg, rgba(123, 160, 91, 0.1), rgba(82, 166, 117, 0.05));
+	border: 2px solid var(--color-soft-sage);
+	border-radius: var(--radius-lg);
+	font-family: var(--font-sans);
+	font-size: var(--text-sm);
+	color: var(--color-text-primary);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: left;
+	box-shadow: var(--shadow-sm);
+}
+
+.suggestionBtn:hover {
+	background: linear-gradient(135deg, rgba(123, 160, 91, 0.2), rgba(82, 166, 117, 0.15));
+	border-color: var(--color-meadow-green);
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-md);
+}
+
+.suggestionBtn:active {
+	transform: translateY(-1px);
+}
+
+.suggestionBtn svg {
+	flex-shrink: 0;
+	color: var(--color-meadow-green);
+}
+
+.text {
+	flex: 1;
+	font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.suggestionsGrid {
+		grid-template-columns: 1fr;
+	}
+	
+	.title {
+		font-size: var(--text-base);
+	}
+	
+	.suggestionBtn {
+		padding: var(--space-xs) var(--space-sm);
+		font-size: var(--text-xs);
+	}
+}

@@ -1,65 +1,274 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+/* ========================================
+   🌳 MINIMIND - Village Numérique Résistant
+   Design System - Nuit de l'Info 2024
+   ======================================== */
+
+/* 📚 TYPOGRAPHY - Educational & Artisanal */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Nunito:wght@300;400;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
 
 /*
-font-family: 'Roboto Slab', serif;
-font-family: 'Work Sans', sans-serif;
+Font Stack:
+- Merriweather: Serif for educational, traditional feel
+- Nunito: Humanistic sans-serif, warm and friendly
+- Fira Code: Monospace for tech/coding aesthetic
 */
 
+/* 🎨 DESIGN TOKENS - Village Numérique */
+:root {
+	/* Earthy Colors - Village & Nature */
+	--color-earth-brown: #8B6F47;
+	--color-forest-green: #4A6741;
+	--color-meadow-green: #7BA05B;
+	--color-warm-beige: #E8DCC4;
+	--color-clay: #C17753;
+	
+	/* School & Education Colors */
+	--color-navy-blue: #2C3E50;
+	--color-chalkboard-green: #3D5A3D;
+	--color-burgundy: #7D4E57;
+	--color-chalk-white: #F4F1E8;
+	
+	/* Eco-Responsible Palette */
+	--color-eco-green: #52A675;
+	--color-natural-green: #8BC34A;
+	--color-soft-sage: #A8B99C;
+	
+	/* Retro Computer Colors */
+	--color-terminal-green: #33FF33;
+	--color-amber: #FFB000;
+	--color-vintage-grey: #C5C5C5;
+	
+	/* Semantic Colors */
+	--color-background: #F9F6F0;
+	--color-background-dark: #2C3E50;
+	--color-text-primary: #2C3E50;
+	--color-text-secondary: #5A6C7D;
+	--color-text-light: #F4F1E8;
+	
+	/* UI Colors */
+	--color-primary: #7BA05B;
+	--color-secondary: #52A675;
+	--color-accent: #C17753;
+	--color-success: #8BC34A;
+	--color-warning: #FFB000;
+	--color-info: #4A6741;
+	
+	/* Shadows & Effects */
+	--shadow-sm: 0 2px 8px rgba(44, 62, 80, 0.1);
+	--shadow-md: 0 4px 16px rgba(44, 62, 80, 0.15);
+	--shadow-lg: 0 8px 32px rgba(44, 62, 80, 0.2);
+	
+	/* Border Radius - Handcrafted Feel */
+	--radius-sm: 8px;
+	--radius-md: 16px;
+	--radius-lg: 24px;
+	--radius-full: 9999px;
+	
+	/* Spacing */
+	--space-xs: 0.5rem;
+	--space-sm: 0.5rem;
+	--space-md: 1.5rem;
+	--space-lg: 2rem;
+	--space-xl: 3rem;
+	
+	/* Typography Scale */
+	--font-serif: 'Merriweather', Georgia, serif;
+	--font-sans: 'Nunito', 'Segoe UI', sans-serif;
+	--font-mono: 'Fira Code', 'Courier New', monospace;
+	
+	--text-xs: 0.75rem;
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-lg: 1.125rem;
+	--text-xl: 1.25rem;
+	--text-2xl: 1.5rem;
+	--text-3xl: 2rem;
+	--text-4xl: 2.5rem;
+	--text-5xl: 3rem;
+}
+
+/* 🌍 GLOBAL STYLES */
 html,
 body {
 	margin: 0;
 	padding: 0;
-	background: #05101c;
-	color: white;
-	font-family: "Lato", sans-serif !important;
+	background: var(--color-background);
+	color: var(--color-text-primary);
+	font-family: var(--font-sans);
+	font-size: 16px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+* {
+	box-sizing: border-box;
+}
+
+/* 🔗 LINKS */
 a {
-	color: inherit;
+	color: var(--color-primary);
 	text-decoration: none;
+	transition: color 0.3s ease, transform 0.2s ease;
+	display: inline-block;
 }
 
 a:hover {
-	text-decoration: none;
-	cursor: pointer;
-	color: hover;
+	color: var(--color-secondary);
+	transform: translateY(-2px);
 }
 
-input {
-	/* Reset the default input styles */
+a:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 4px;
+	border-radius: var(--radius-sm);
+}
+
+/* 📝 INPUTS - Handcrafted Style */
+input,
+textarea {
 	appearance: none;
-	border: 1px solid #ccc;
-	padding: 8px;
-	margin: 4px 0;
-	font-size: inherit;
+	border: 2px solid var(--color-soft-sage);
+	background: var(--color-chalk-white);
+	color: var(--color-text-primary);
+	padding: var(--space-sm);
+	margin: var(--space-xs) 0;
+	font-size: var(--text-base);
+	font-family: var(--font-sans);
+	border-radius: var(--radius-md);
+	transition: all 0.3s ease;
 }
 
-input:active,
-input:focus {
-	/* Optional: Reset additional active/focus styles */
+input:focus,
+textarea:focus {
 	outline: none;
-	box-shadow: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 4px rgba(123, 160, 91, 0.1);
+	transform: translateY(-2px);
 }
 
+input:hover,
+textarea:hover {
+	border-color: var(--color-meadow-green);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+/* 🔘 BUTTONS - Warm & Interactive */
 button {
-	background: none;
+	background: var(--color-primary);
+	color: white;
 	border: none;
-	padding: 0;
+	padding: var(--space-sm) var(--space-lg);
 	margin: 0;
-	font-size: inherit;
-	font-family: inherit;
+	font-size: var(--text-base);
+	font-family: var(--font-sans);
+	font-weight: 600;
 	cursor: pointer;
+	border-radius: var(--radius-full);
+	transition: all 0.3s ease;
+	box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+	background: var(--color-secondary);
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-md);
+}
+
+button:active {
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-sm);
 }
 
 button:focus {
 	outline: none;
+	box-shadow: 0 0 0 4px rgba(123, 160, 91, 0.3);
 }
 
-textarea {
-	border: none;
-	overflow: auto;
-	outline: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
+button:disabled {
+	background: var(--color-vintage-grey);
+	cursor: not-allowed;
+	transform: none;
 	box-shadow: none;
+}
+
+/* 📖 TYPOGRAPHY UTILITIES */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-serif);
+	font-weight: 700;
+	line-height: 1.2;
+	margin-top: 0;
+	color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+	margin-top: 0;
+	margin-bottom: var(--space-md);
+}
+
+code {
+	font-family: var(--font-mono);
+	background: rgba(123, 160, 91, 0.1);
+	padding: 2px 6px;
+	border-radius: var(--radius-sm);
+	font-size: 0.9em;
+	color: var(--color-forest-green);
+}
+
+/* 🎯 UTILITY CLASSES */
+.text-center { text-align: center; }
+.text-serif { font-family: var(--font-serif); }
+.text-mono { font-family: var(--font-mono); }
+
+/* ✨ ANIMATIONS */
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+	from { transform: translateX(-100%); }
+	to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+	0%, 100% { transform: scale(1); }
+	50% { transform: scale(1.05); }
+}
+
+.animate-fadeIn {
+	animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideIn {
+	animation: slideIn 0.4s ease-out;
+}
+
+/* 🌐 SCROLLBAR - Custom Style */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-warm-beige);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-meadow-green);
+	border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-forest-green);
 }

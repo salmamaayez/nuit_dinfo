@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-
 import styles from "./Logo.module.css";
-import logo from "/logos/logo1.png";
 
 const Logo = () => {
 	return (
 		<div className={styles.parent}>
-				<Link to={"/"}>
-					<img src={logo} alt='logo' className={styles.logo} />
-				</Link>
-				<p className={styles.logo_p}>
-					<span className={styles.span}>MiniMind</span>
-				</p>
+			<Link to={"/"} className={styles.logoLink}>
+				<div className={styles.logoIcon}>
+					<span className={styles.village}>🏘️</span>
+					<span className={styles.brain}>🧠</span>
+				</div>
+				<div className={styles.logoText}>
+					<span className={styles.miniText}>Mini</span>
+					<span className={styles.mindText}>Mind</span>
+				</div>
+			</Link>
+			{/*<p className={styles.tagline}>Village Numérique 🌱</p>*/}
 		</div>
 	);
 };

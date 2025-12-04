@@ -1,166 +1,327 @@
-/*.parent {
-	scroll-snap-type: y mandatory;
-	overflow-y: scroll;
-	height: 100vh;
-	width: 100%;
+/* ========================================
+   🏠 HOME PAGE - Village Numérique Résistant
+   ======================================== */
+
+.container {
+	min-height: 100vh;
+	background: linear-gradient(180deg, var(--color-background) 0%, var(--color-warm-beige) 100%);
 }
 
-.parent h1 {
-	font-weight: 1000;
-	font-size: 3rem;
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+	padding: var(--space-xl) var(--space-lg);
+	text-align: center;
+	position: relative;
+	overflow: hidden;
 }
 
-.parent h2 {
-	color: #00ced1;
+.heroContent {
+	max-width: 1200px;
+	margin: 0 auto;
+	animation: fadeIn 1s ease-out;
 }
 
-.parent p {
-	font-weight: 300;
-	font-size: 1.3rem;
-	word-spacing: 0.4rem;
-	line-height: 2;
+.trustBadges {
+	display: flex;
+	justify-content: center;
+	gap: var(--space-sm);
+	flex-wrap: wrap;
+	margin-bottom: var(--space-xl);
 }
 
-.highlight {
-	color: #00ced1 !important;
-	margin: 0;
-}
-
-.btn {
-	background-color: #00ced1;
-    padding: 1rem 2rem;
-    color:black;
-    border-radius: 10px;
-    margin-top:2rem;
-    font-size:1.2rem;
-    font-weight:400
-}
-
-.ui1 {
-	max-width: 100%;
-}
-
-.ui2 {
-	width: 80%;
-}
-*/
-.parent h1 {
-	font-weight: 1000;
-	font-size: 3rem;
-}
-
-.parent h2 {
-	color: #00ced1;
-}
-
-.parent p {
-	font-weight: 300;
-	font-size: 1.3rem;
-	word-spacing: 0.4rem;
-	line-height: 2;
+.mainTitle {
+	font-family: var(--font-serif);
+	font-size: var(--text-5xl);
+	font-weight: 900;
+	color: var(--color-navy-blue);
+	margin-bottom: var(--space-md);
+	line-height: 1.1;
 }
 
 .highlight {
-	color: #00ced1 !important;
+	color: var(--color-meadow-green);
+	position: relative;
+	display: inline-block;
+}
+
+.highlight::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	right: 0;
+	height: 8px;
+	background: linear-gradient(90deg, var(--color-meadow-green), var(--color-eco-green));
+	opacity: 0.3;
+	border-radius: var(--radius-sm);
+}
+
+.subtitle {
+	font-family: var(--font-sans);
+	font-size: var(--text-2xl);
+	color: var(--color-forest-green);
+	font-weight: 700;
+	margin-bottom: var(--space-lg);
+}
+
+.description {
+	font-family: var(--font-sans);
+	font-size: var(--text-lg);
+	color: var(--color-text-secondary);
+	max-width: 700px;
+	margin: 0 auto var(--space-xl);
+	line-height: 1.8;
+}
+
+.description strong {
+	color: var(--color-forest-green);
+	font-weight: 700;
+}
+
+.ctaButtons {
+	margin-bottom: var(--space-xl);
+}
+
+.primaryBtn {
+	display: inline-block;
+	background: linear-gradient(135deg, var(--color-meadow-green), var(--color-eco-green));
+	color: white;
+	padding: var(--space-md) var(--space-xl);
+	border-radius: var(--radius-full);
+	font-family: var(--font-sans);
+	font-size: var(--text-xl);
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: var(--shadow-md);
+	transition: all 0.3s ease;
+	border: 3px solid var(--color-forest-green);
+}
+
+.primaryBtn:hover {
+	transform: translateY(-5px) scale(1.05);
+	box-shadow: var(--shadow-lg);
+	background: linear-gradient(135deg, var(--color-eco-green), var(--color-meadow-green));
+}
+
+/* Village Illustration */
+.villageIllustration {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	gap: var(--space-md);
+	font-size: 3rem;
+	margin-top: var(--space-xl);
+	padding: var(--space-lg);
+	background: linear-gradient(180deg, transparent, rgba(123, 160, 91, 0.1));
+	border-radius: var(--radius-lg);
+}
+
+.house, .tree, .robot {
+	animation: float 3s ease-in-out infinite;
+	transition: transform 0.3s ease;
+}
+
+.house:hover, .tree:hover, .robot:hover {
+	transform: scale(1.3) rotate(5deg);
+	cursor: pointer;
+}
+
+.house:nth-child(1) { animation-delay: 0s; }
+.tree:nth-child(2) { animation-delay: 0.3s; }
+.robot { animation-delay: 0.6s; }
+.tree:nth-child(4) { animation-delay: 0.9s; }
+.house:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+}
+
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
+
+.features {
+	padding: var(--space-xl) var(--space-lg);
+	background: white;
+}
+
+.sectionTitle {
+	font-family: var(--font-serif);
+	font-size: var(--text-4xl);
+	color: var(--color-navy-blue);
+	text-align: center;
+	margin-bottom: var(--space-xl);
+	font-weight: 800;
+}
+
+.featureGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: var(--space-lg);
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* ========================================
+   EDUCATIONAL SECTION
+   ======================================== */
+
+.educational {
+	padding: var(--space-xl) var(--space-lg);
+	background: linear-gradient(135deg, var(--color-chalkboard-green), var(--color-forest-green));
+	color: white;
+}
+
+.educational .sectionTitle {
+	color: var(--color-chalk-white);
+}
+
+.educationalContent {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.educationalGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-lg);
+	margin-top: var(--space-xl);
+}
+
+.educationalCard {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: var(--radius-lg);
+	padding: var(--space-lg);
+	transition: all 0.3s ease;
+}
+
+.educationalCard:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: translateY(-5px);
+	border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cardIcon {
+	font-size: 3rem;
+	display: block;
+	margin-bottom: var(--space-md);
+}
+
+.educationalCard h3 {
+	font-family: var(--font-serif);
+	font-size: var(--text-xl);
+	margin-bottom: var(--space-sm);
+	color: var(--color-chalk-white);
+}
+
+.educationalCard p {
+	font-family: var(--font-sans);
+	font-size: var(--text-base);
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.9);
 	margin: 0;
 }
 
-.btn {
-	background-color: #00ced1;
-	padding: 1rem 2rem;
-	color: black;
-	border-radius: 10px;
-	margin-top: 2rem;
-	font-size: 1.2rem;
-	font-weight: 400;
+/* ========================================
+   CTA FOOTER
+   ======================================== */
+
+.ctaFooter {
+	padding: var(--space-xl) var(--space-lg);
+	text-align: center;
+	background: linear-gradient(180deg, var(--color-warm-beige), var(--color-background));
 }
 
-/* Images */
-.ui1 {
-	max-width: 100%;
+.ctaFooter h2 {
+	font-family: var(--font-serif);
+	font-size: var(--text-4xl);
+	color: var(--color-navy-blue);
+	margin-bottom: var(--space-md);
 }
 
-.ui2 {
-	width: 80%;
+.ctaFooter p {
+	font-family: var(--font-sans);
+	font-size: var(--text-lg);
+	color: var(--color-text-secondary);
+	margin-bottom: var(--space-lg);
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
 
-
-/* =========================================
-   📱 RESPONSIVE DESIGN — HOME PAGE
-   ========================================= */
-
-/* -------- MOBILE -------- */
+/* Mobile */
 @media (max-width: 768px) {
-
-	.parent,
-	.parent_reverse {
-		flex-direction: column;
-		height: auto;
-		padding: 3rem 1rem;
+	.hero {
+		padding: var(--space-lg) var(--space-md);
 	}
-
-	.div1,
-	.div2 {
-		width: 100%;
-		padding-left: 0 !important;
-		text-align: center;
-		flex-direction: column;
+	
+	.mainTitle {
+		font-size: var(--text-3xl);
 	}
-
-	.div1 > h1,
-	.parent h1 {
+	
+	.subtitle {
+		font-size: var(--text-xl);
+	}
+	
+	.description {
+		font-size: var(--text-base);
+	}
+	
+	.primaryBtn {
+		font-size: var(--text-lg);
+		padding: var(--space-sm) var(--space-lg);
+	}
+	
+	.villageIllustration {
 		font-size: 2rem;
-		text-align: center;
+		gap: var(--space-xs);
+		padding: var(--space-md);
 	}
-
-	.parent p,
-	.div2 > p {
-		font-size: 1rem;
-		text-align: center;
-		line-height: 1.6;
+	
+	.trustBadges {
+		gap: var(--space-xs);
 	}
-
-	.btn {
-		padding: 0.8rem 1.4rem;
-		font-size: 1rem;
+	
+	.featureGrid {
+		grid-template-columns: 1fr;
+		gap: var(--space-md);
 	}
-
-	.img {
-		margin-top: 2rem;
+	
+	.educationalGrid {
+		grid-template-columns: 1fr;
+		gap: var(--space-md);
 	}
-
-	.ui2 {
-		width: 95%;
+	
+	.sectionTitle {
+		font-size: var(--text-2xl);
+	}
+	
+	.ctaFooter h2 {
+		font-size: var(--text-2xl);
 	}
 }
 
-
-/* -------- TABLETTE -------- */
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-
-	.parent,
-	.parent_reverse {
-		flex-direction: column;
-		height: auto;
-		padding: 4rem 2rem;
+	.mainTitle {
+		font-size: var(--text-4xl);
 	}
-
-	.div1,
-	.div2 {
-		width: 90%;
-		text-align: center;
+	
+	.featureGrid {
+		grid-template-columns: repeat(2, 1fr);
 	}
-
-	.div1 > h1 {
-		font-size: 2.5rem;
-	}
-
-	.parent p {
-		font-size: 1.1rem;
-	}
-
-	.ui2 {
-		width: 85%;
+	
+	.educationalGrid {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }

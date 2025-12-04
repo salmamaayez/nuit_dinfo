@@ -1,12 +1,12 @@
 import Spinner from "../shared/Spinner";
 import styles from "./ChatItem.module.css";
-import botIcon from "/logos/bot.png";
+import { BotIcon } from "./Icons";
 
 const ChatLoading = () => {
 	return (
 		<div className={`${styles.parent} ${styles.bot_parent}`}>
-			<div className={`${styles.avatar}`}>
-				<img src={botIcon} alt='chat bot icon'></img>
+			<div className={`${styles.avatar} ${styles.bot_avatar}`}>
+				<BotIcon />
 			</div>
 			<div className={styles.spinner}>
 				<Spinner/>
@@ -16,3 +16,4 @@ const ChatLoading = () => {
 };
 
 export default ChatLoading;
+
