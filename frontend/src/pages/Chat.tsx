@@ -110,6 +110,7 @@ const Chat = () => {
       <PredictionDisplay 
         predictions={predictions} 
         onWordClick={handlePredictionClick}
+        userInput={chatMessages.length > 0 ? chatMessages[chatMessages.length - 2]?.content : ""}
       />
     )}
   </>

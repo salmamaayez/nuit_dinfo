@@ -68,6 +68,20 @@ const Home = () => {
           />
           
           <FeatureCard
+            icon="🌳"
+            title="Jeu d'Arbre à Phrases"
+            description="Construis des phrases mot par mot et explore toutes les possibilités ! L'IA te propose des mots et tu crées ton histoire."
+            color="purple"
+          />
+          
+          <FeatureCard
+            icon="👁️"
+            title="Vision Artificielle"
+            description="Découvre comment l'IA 'voit' et analyse les images ! Teste la détection d'objets avec MobileNet."
+            color="cyan"
+          />
+          
+          <FeatureCard
             icon="🧠"
             title="Comprends l'IA"
             description="Apprends comment l'IA prend ses décisions, quels modèles elle utilise, et quelles données elle manipule."

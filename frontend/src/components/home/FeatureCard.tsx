@@ -5,7 +5,7 @@ interface FeatureCardProps {
 	icon: string;
 	title: string;
 	description: string;
-	color?: 'green' | 'blue' | 'orange' | 'burgundy';
+	color?: 'green' | 'blue' | 'orange' | 'burgundy' | 'purple' | 'cyan';
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ 

@@ -10,7 +10,9 @@ const Header = () => {
       </div>
       <div>
         <NavigationLink to="/chat" text="ChatBot" />
-        <NavigationLink to="/" text="Other" />
+        <NavigationLink to="/sentence-tree" text="🌳 Jeu d'Arbre" />
+        <NavigationLink to="/image-detection" text="👁️ Yeux IA" />
+        <NavigationLink to="/" text="Acceuil " />
       </div>
     </div>
   );

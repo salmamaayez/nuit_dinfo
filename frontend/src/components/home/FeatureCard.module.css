@@ -88,6 +88,18 @@
 	--bg-color: rgba(125, 78, 87, 0.15);
 }
 
+.purple {
+	--accent-color: #9b59b6;
+	--accent-color-light: #c084fc;
+	--bg-color: rgba(155, 89, 182, 0.15);
+}
+
+.cyan {
+	--accent-color: #00bcd4;
+	--accent-color-light: #4dd0e1;
+	--bg-color: rgba(0, 188, 212, 0.15);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 	.card {

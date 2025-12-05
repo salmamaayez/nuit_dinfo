@@ -11,13 +11,20 @@
 }
 
 .link:hover {
-	background: var(--color-eco-green);
+	color: white;
 	transform: translateY(-2px);
 	box-shadow: var(--shadow-md);
 }
 
 .pending {
-	background: var(--color-clay);
+	
 	color: white;
 }
-
+._pending_njxf8_37 {
+	background:transparent;
+	color: white;
+}
+.undefined{
+	background:transparent;
+	color: white;
+}
